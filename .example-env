@@ -1,0 +1,18 @@
+PORT=7000
+
+# Database Configuration
+DB_HOST=localhost
+DB_PORT=5432
+DB_USER=admin
+DB_PASSWORD=admin
+DB_NAME=b2c
+
+# Base URL
+BASE_URL=http://localhost:7000/api/v1
+FILE_UPLOAD_API_URL="https://fu-service.vercel.app"
+
+MAIL_PORT=465
+MAIL_HOST='smtp.gmail.com'
+MAIL_USER='b2cbusinesssolution1@gmail.com'
+MAIL_PASS='vfft dztz hotk fdsg'
+
