@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { PurchaseSchema, TPurchaseSchema, TPurchaseItemListSchema, TUserProfileSchema } from "../helpers/validate";
+import { Prisma } from "../../generated/prisma";
 interface PurchaseItem {
     id?: number | null;
     purchaseId?: number | null;
@@ -91,8 +92,8 @@ declare class PurchaseService {
             createdAt: Date;
             updatedAt: Date;
             businessId: number;
-            subtotal: import("generated/prisma/runtime/library").Decimal;
-            totalAmount: import("generated/prisma/runtime/library").Decimal;
+            subtotal: Prisma.Decimal;
+            totalAmount: Prisma.Decimal;
             status: string;
             notes: string | null;
             createdBy: number;
@@ -105,9 +106,9 @@ declare class PurchaseService {
             purchaseDate: Date;
             expectedDeliveryDate: Date;
             actualDeliveryDate: Date;
-            taxAmount: import("generated/prisma/runtime/library").Decimal | null;
-            discountAmount: import("generated/prisma/runtime/library").Decimal | null;
-            shippingCost: import("generated/prisma/runtime/library").Decimal | null;
+            taxAmount: Prisma.Decimal | null;
+            discountAmount: Prisma.Decimal | null;
+            shippingCost: Prisma.Decimal | null;
             paymentStatus: string;
         }[];
         pagination: {

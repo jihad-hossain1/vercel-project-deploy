@@ -4,7 +4,7 @@ import utilsService from "../utils/utils.service";
 import { userSchema, loginSchema, TUserSchema } from "../helpers/validate";
 import { sendMail } from "./mail.service";
 import dotenv from "dotenv";
-import { Prisma } from "@prisma/client";
+import { Prisma } from "../../generated/prisma";
 dotenv.config();
 
 class AuthService {

@@ -5,7 +5,7 @@ import logService from "./log.service";
 import autoCodeGenerateService from "./auto-code-generate.service";
 import dashboardService from "./dashboard.service";
 import inventoryService from "./inventory.service";
-import { Prisma } from "@prisma/client";
+import { Prisma } from "../../generated/prisma";
 import jwtService from "../utils/jwt.service";
 
 interface PurchaseItem {
@@ -214,7 +214,7 @@ class PurchaseService {
 
             return {
                 success: true,
-                data: { ...result, user_profile: user_pr[0] },
+                data: { ...result, user_profile: user_pr[0] }  as any,
             };
         } catch (error) {
             logService.error({
@@ -553,7 +553,7 @@ class PurchaseService {
                     const insertedItems = [] as ExistingDetail[];
                     for (const item of newItems) {
                         const insertedItem = await tx.purchase_detail.create({
-                            data: item,
+                            data: item      as any,
                         });
                         insertedItems.push(insertedItem);
                     }
