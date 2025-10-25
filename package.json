@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tsc",
+    "build": "npx prisma generate && tsc",
     "start": "node dist/index.js",
-    "dev": "nodemon --exec ts-node src/index.ts"
+    "dev": "nodemon --exec ts-node src/index.ts",
+    "postinstall": "prisma generate"
   },
   "repository": {
     "type": "git",
@@ -21,14 +22,17 @@
   },
   "homepage": "https://github.com/jihad-hossain1/vercel-project-deploy#readme",
   "devDependencies": {
-    "nodemon": "^3.1.10",
     "@types/express": "^5.0.3",
     "@types/node": "^24.7.2",
     "@types/nodemailer": "^6.4.17",
+    "nodemon": "^3.1.10",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
   },
   "dependencies": {
-    "express": "^5.1.0"
+    "@prisma/client": "^6.18.0",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "prisma": "^6.18.0"
   }
 }
