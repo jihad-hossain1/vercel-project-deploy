@@ -1,10 +1,5 @@
 import { PrismaClient } from "../../generated/prisma";
 
-// Add PrismaClient to the NodeJS global type
-declare global {
-  var prisma: PrismaClient | undefined;
-}
-
 const prismaClientSingleton = () => {
   return new PrismaClient({
     log:
@@ -21,7 +16,7 @@ const prismaClientSingleton = () => {
 };
 
 // For Vercel serverless environment, we need to handle connection differently
-let prisma: PrismaClient;
+let prisma;
 
 // Check if we're in production (Vercel) or development
 if (process.env.NODE_ENV === "production") {
@@ -35,4 +30,4 @@ if (process.env.NODE_ENV === "production") {
   prisma = globalThis.prisma;
 }
 
-export default prisma;
+module.exports = prisma;
