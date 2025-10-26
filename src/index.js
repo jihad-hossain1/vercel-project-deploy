@@ -1,7 +1,7 @@
 // Use "type: module" in package.json to use ES modules
-import express from "express";
-import prisma from "./lib/prisma";
-import dotenv from "dotenv";
+const express = require("express");
+const prisma = require("./lib/prisma");
+const dotenv = require("dotenv");
 dotenv.config();
 
 dotenv.config();
