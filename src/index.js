@@ -1,9 +1,6 @@
 // Use "type: module" in package.json to use ES modules
 const express = require("express");
-const prisma = require("./lib/prisma");
 const dotenv = require("dotenv");
-dotenv.config();
-
 dotenv.config();
 
 const app = express();
@@ -15,7 +12,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/test", async (req, res) => {
-    const result = await prisma.logs.findMany();
+    const result = { status: "success", data: "This is a test endpoint." };
     res.json(result);
 });
 
