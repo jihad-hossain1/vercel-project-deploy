@@ -14,7 +14,7 @@ const prismaClientSingleton = () => {
     // Optimize connection pool for serverless environment
     datasources: {
       db: {
-        url: process.env.DATABASE_URL,
+        url: process.env.DATABASE_URL_PRISMA,
       },
     },
   });
